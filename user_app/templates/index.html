@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+    #wrapper {
+        width: 1000px;
+        display: block;
+        margin: 0 auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    table{
+        margin: 0 auto;
+        padding: 10px;
+    }
+    a {
+        display: block;
+        width: 10%;
+        border: black solid 1px;
+        text-decoration: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+    td{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <main id="wrapper">
+        <h1>Employees</h1>
+        <table class="table table-bordered">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+                <th>Age</th>
+            </thead>
+            {%for employee in employees%}
+            <tr>
+                <td>{{employee.first_name}}</td>
+                <td>{{employee.last_name}}</td>
+                <td>{{employee.email_address}}</td>
+                <td>{{employee.age}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+        <a href='/employee/new'>Add New User</a>
+    </main>
+</body>
+</html>
